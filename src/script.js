@@ -24,18 +24,14 @@ const scene = new THREE.Scene();
 /**
  * Objects
  */
-const material = new THREE.MeshToonMaterial({color: parameters.materialColor})
+const material = new THREE.MeshToonMaterial({
+  color: parameters.materialColor,
+});
 
 // Meshes
-const mesh1 = new THREE.Mesh(
-  new THREE.TorusGeometry(1, 0.4, 16, 60),
-  material
-);
+const mesh1 = new THREE.Mesh(new THREE.TorusGeometry(1, 0.4, 16, 60), material);
 
-const mesh2 = new THREE.Mesh(
-  new THREE.ConeGeometry(1, 2, 32),
-  material
-);
+const mesh2 = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 32), material);
 
 const mesh3 = new THREE.Mesh(
   new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
@@ -43,6 +39,13 @@ const mesh3 = new THREE.Mesh(
 );
 
 scene.add(mesh1, mesh2, mesh3);
+
+/**
+ * Lights
+ */
+const directionalLight = new THREE.DirectionalLight("#ffffff", 1);
+directionalLight.position.set(1, 1, 0);
+scene.add(directionalLight);
 
 /**
  * Sizes
