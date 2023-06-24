@@ -124,6 +124,18 @@ window.addEventListener("scroll", () => {
 });
 
 /**
+ * Cursor
+ */
+const cursor = {};
+cursor.x = 0;
+cursor.y = 0;
+
+window.addEventListener("mousemove", (event) => {
+  cursor.x = event.clientX;
+  cursor.y = event.clientY;
+});
+
+/**
  * Animate
  */
 const clock = new THREE.Clock();
@@ -132,7 +144,7 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   // Animate camera
-  camera.position.y = -scrollY / sizes.height * objectsDistance;
+  camera.position.y = (-scrollY / sizes.height) * objectsDistance;
 
   // Animate meshes
   for (const mesh of sectionMeshes) {
