@@ -33,6 +33,7 @@ const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 
 const material = new THREE.MeshToonMaterial({
   color: parameters.materialColor,
+  gradientMap: gradientTexture
 });
 
 // Meshes
