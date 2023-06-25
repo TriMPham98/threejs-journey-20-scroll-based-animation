@@ -35,8 +35,8 @@ const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 gradientTexture.magFilter = THREE.NearestFilter;
 
 const material = new THREE.MeshNormalMaterial({
-  color: parameters.materialColor,
-  gradientMap: gradientTexture,
+  // color: parameters.materialColor,
+  // gradientMap: gradientTexture,
   wireframe: true
 });
 
