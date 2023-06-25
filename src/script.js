@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import * as dat from "lil-gui";
+import { gsap } from "gsap";
 
 /**
  * Debug
@@ -162,8 +163,6 @@ window.addEventListener("scroll", () => {
 
   if (newSection != currentSection) {
     currentSection = newSection;
-
-    console.log("Changed", currentSection);
   }
 });
 
